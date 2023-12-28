@@ -50,7 +50,54 @@ SELECT
 	 
 SELECT CONCAT(menu_name, '의 가격은', 
 
+-- FORMAT (숫자, 소숫점 자릿수)
+
+SELECT FORMAT(12312314566,3);
+
+-- BIN(숫자), OCT(숫자), HEX(숫자)
+SELECT BIN(65), OCT(65), HEX(65);
+
+-- REPEAT(문자열, 횟수)
+SELECT REPEAT('재미져',5);
+SELECT REPEAT('재미져',5);
+
+-- REPLACE(문자열, 찾을 문자열, 바꿀 문자열)
+SELECT REPLACE ('마리아DB', '마리아', 'MARIA');
+
+-- REVERSE(문자열)
+SELECT REVERSE ('MARIADB');
+
+-- SPACE(길이)
+SELECT CONCAT ('제 포켓몬은', SPACE(3), '이고, 속성은', SPACE(6), '입니다.');
+
+-- SUBSTRING(문자열,  시작위치, 길이)
+SELECT SUBSTRING('열심히 DB공부를 같이 해봅시다!', 5, 4);
+
+SELECT 
+		 SUBSTRING('열심히 DB공부를 해봅시다!', 5, 4)
+	 ,  SUBSTRING('열심히 DB공부를 해봅시다!', 11); -- 11번째 문자부터 끝까지
+	 
+-- SUBSTRING_INDEX(문자열, 구분자, 횟수)
+SELECT
+		 SUBSTRING_INDEX('010-123-1234', '-', 2) -- '-'기준으로 왼쪽으로부터 두 묶음
+	 ,  SUBSTRING_INDEX('010-123-1234', '-', -1); -- '-'기준으로 오른쪽으로부터 한 묶음
+
 -- 2) 숫자 관련 함수
+
+-- ABS(숫자)
+SELECT ABS(-123);
+
+-- CEILING(숫자): 올림, FLOOR(숫자): 버림, ROUND(숫자): 반올림
+SELECT CEILING(1234.56), FLOOR(1234.56), ROUND(1234.56);
+
+-- CONV(숫자, 원래진수, 변환할 진수)
+SELECT CONV('A', 16, 10), CONV('A', 16, 2);
+
+-- MOD(숫자1, 숫자2): 나머지 함수
+SELECT MOD(10, 3);
+
+-- POW(숫자1, 숫자2):제곱, SQRT(숫자): 제곱근
+SELECT POW(3, 2), SQRT(81);
 
 -- 3) 날짜 및 시간 관련 함수
 
